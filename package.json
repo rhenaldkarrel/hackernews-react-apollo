@@ -13,17 +13,6 @@
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
-  "lint-staged": {
-    "src/**/*.{js,jsx}": [
-      "yarn fix:all"
-    ],
-    "server/**/*.js": [
-      "yarn fix:all"
-    ],
-    "src/**/*.js": [
-      "jest --bail --watchAll=false --findRelatedTests --passWithNoTests"
-    ]
-  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -32,7 +21,7 @@
     "lint:fix": "eslint ./**/*.{js,jsx} --fix",
     "prettier:fix": "prettier --write ./**/*.{js,jsx,css,scss,md,json} --config ./.prettierrc",
     "fix:all": "yarn run prettier:fix && yarn run lint:fix",
-    "husky-install": "husky install"
+    "prepare": "husky install"
   },
   "eslintConfig": {
     "extends": [
@@ -56,13 +45,7 @@
     "eslint": "^8.23.1",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
-    "husky": "^8.0.1",
-    "lint-staged": "^13.0.3",
+    "husky": "^8.0.0",
     "prettier": "^2.7.1"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
   }
 }
