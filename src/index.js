@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "styles/index.css";
-import App from "components/App";
+import App from "components/App/App";
 import reportWebVitals from "./reportWebVitals";
 
 import { ApolloProvider, ApolloClient, createHttpLink, InMemoryCache } from "@apollo/client";
