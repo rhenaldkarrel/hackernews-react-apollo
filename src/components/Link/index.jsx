@@ -1,8 +1,12 @@
 import { gql, useMutation } from "@apollo/client";
-import { AUTH_TOKEN } from "constant";
+import { AUTH_TOKEN, LINKS_PER_PAGE } from "constant";
 import { PropTypes } from "prop-types";
 import { timeDifferenceForDate } from "utils";
 import { FEED_QUERY } from "components/LinkList";
+
+const take = LINKS_PER_PAGE;
+const skip = 0;
+const orderBy = { createdAt: "desc" };
 
 const VOTE_MUTATION = gql`
   mutation VoteMutation($linkId: ID!) {
@@ -33,7 +37,12 @@ const Link = ({ link, index }) => {
     },
     update: (cache, { data: { vote } }) => {
       const { feed } = cache.readQuery({
-        query: FEED_QUERY
+        query: FEED_QUERY,
+        variables: {
+          take,
+          skip,
+          orderBy
+        }
       });
 
       const updatedLinks = feed.links.map((feedLink) => {
@@ -53,6 +62,11 @@ const Link = ({ link, index }) => {
           feed: {
             links: updatedLinks
           }
+        },
+        variables: {
+          take,
+          skip,
+          orderBy
         }
       });
     }
