@@ -1,70 +1,62 @@
-# Getting Started with Create React App
+# Hackernews Clone
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a Hackernews Clone project that I have created by following the [How to GraphQL](https://github.com/howtographql) tutorial. **This repository focuses on implementing the frontend side using my personal code standard and workspace setup**. For backend implementation, you can visit this [repository](https://github.com/howtographql/graphql-js) of Node.js GraphQL Server implementation by [How to GraphQL](https://github.com/howtographql).
 
-## Available Scripts
+This app contains 5 core functionalities:
 
-In the project directory, you can run:
+1. **new**: see all links that are posted
+2. **top**: see all links sorted by most upvoted by users
+3. **submit**: create new links (for authorized users)
+4. **search**: search list of links
+5. **login/logout**: login, signup, and logout
 
-### `npm start`
+![Page home of the app](./docs/img/page-new.png)
+![Page top of the app](./docs/img/page-top.png)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Technology Used
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- React.js
+- GraphQL Apollo Client
+- Eslint + Prettier
+- Husky
+- PropTypes
 
-### `npm test`
+## Feature Highlights
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Simple query (reading links) and mutation (creating links)
+- Search the list of links (filtering by keyword inputted)
+- Authentication with GraphQL
+- Caching with GraphQL
+- Simple pagination with GraphQL
+- Realtime updates with GraphQL subscriptions
 
-### `npm run build`
+## How to use
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 1. Clone repository
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```sh
+git clone https://github.com/rhenaldkarrel/hackernews-react-apollo
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 2. Start the backend server
 
-### `npm run eject`
+Go to the `server` folder, install dependencies and start the server.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```sh
+cd hackernews-react-apollo/server
+yarn
+yarn dev
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+> **Note**: If you want to interact with the GraphQL API of the server inside a [GraphQL Playground](https://github.com/prisma/graphql-playground), you can navigate to [http://localhost:4000](http://localhost:4000).
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### 3. Run the app
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Now that the server is running, you can start the React app as well. The commands need to be run in a new terminal tab/window inside the root directory `hackernews-react-apollo` (because the current tab is blocked by the process running the server):
 
-## Learn More
+```sh
+yarn
+yarn start
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+You can now open your browser and use the app on [http://localhost:3000](http://localhost:3000).
