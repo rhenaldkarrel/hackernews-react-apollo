@@ -1,8 +1,9 @@
+import { Route, Routes } from "react-router-dom";
 import LinkList from "components/LinkList";
 import CreateLink from "components/CreateLink";
 import Header from "components/Header";
 import Login from "components/Login";
-import { Route, Routes } from "react-router-dom";
+import Search from "components/Search";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Route path="/" element={<LinkList />} />
           <Route path="/create" element={<CreateLink />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/search" element={<Search />} />
         </Routes>
       </div>
     </div>
